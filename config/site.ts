@@ -5,11 +5,11 @@ const baseSiteConfig = {
   name: "Developer.lulu",
   description:
     "Developer.lulu 的个人技术博客，记录在折腾过程中踩过的坑，学到的知识，研究的理论",
-  url: "",
-  // metadataBase: 'https://test',
-  // alternates:{
-  //   canonical: './'
-  // },
+  url: "https://lulubiu.com/",
+  metadataBase: 'https://lulubiu.com/',
+  alternates:{
+    canonical: './'
+  },
   defaultNextTheme: 'dark', // next-theme option: system | dark | light
   icons: {
     icon: "/favicon.ico",
