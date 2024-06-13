@@ -1,0 +1,28 @@
+---
+title: cloudflare 设置 www 域名重定向到根域名
+slug: cloudflare-config-domain
+date: 2024-06-13
+---
+
+以前都是在 vercel 上部署,绑定域名,操作很简单,直接选择一下就可以了,然后在 cloudflare 上配置好 dns 记录,
+接下来访问 `www.xxx.com` 网址的话,会自动重定向到 `xxx.com`
+
+现在我的个人技术博客,部署到了 cloudflare 上,和 vercel 不同,如果也想实现重定向,则需要进行一些配置
+
+首先在 cloudflare 后台添加对应 www 的 dns 记录
+
+然后在 `规则` -- `重定向规则` 界面中,新建一条规则
+
+选择 `自定义筛选表达式`,配置`主机名 等于 www.lulubiu.com` ,则 url 重定向 `动态 concat("https://lulubiu.com", http.request.uri.path)` ,状态代码选择 `308`
+
+勾选 `保留查询字符串`
+
+详细见下图:
+
+![规则设置](/assets/cloudflare-config-domain/config.jpg)
+
+更详细的可参考官方指导文档: [cloudflare doc](https://developers.cloudflare.com/rules/reference/page-rules-migration/#migrate-forwarding-url)
+
+接下来访问 `www.lulubiu.com` 时,会自动重定向到 `lulubiu.com`
+
+问题解决
