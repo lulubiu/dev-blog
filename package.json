@@ -23,6 +23,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "dayjs": "^1.11.10",
+    "date-fns": "^2.30.0",
     "escape-string-regexp": "^5.0.0",
     "flexsearch": "^0.7.43",
     "framer-motion": "^11.0.25",
