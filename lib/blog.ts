@@ -6,7 +6,7 @@ import path from 'path';
 import { compareDesc } from 'date-fns';
 
 export async function getBlogPosts(): Promise<{ posts: BlogPost[]; postsByMonth: PostsByMonth }> {
-  const postsDirectory = path.join(process.cwd(), 'content')
+  const postsDirectory = path.join(process.cwd(), 'content/blog')
   let filenames = await fs.promises.readdir(postsDirectory)
   filenames = filenames.reverse()
 
