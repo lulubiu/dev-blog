@@ -104,7 +104,7 @@ export default async function BlogDetailsPage({ params }: Props) {
           </div>
         </div>
       </div>
-      <div className="hidden md:flex flex-col justify-start md:w-1/5 pr-6">
+      <div className="hidden md:block md:w-1/5 pr-6 max-h-[90vh] h-full overflow-auto sticky top-16 left-0 mt-6">
         <TOC />
       </div>
     </div>
