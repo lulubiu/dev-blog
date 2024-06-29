@@ -19,7 +19,7 @@ const Header = ({ posts }: { posts: BlogPost[] }) => {
               width={24}
               height={24}
             />
-            <span className="text-gray-100 hidden sm:block">Developer.lulu 的个人技术博客</span>
+            <span className="text-gray-100 hidden sm:block">Developer.lulu 的个人博客</span>
           </Link>
           <div className="hidden md:flex md:gap-x-6"></div>
         </div>
