@@ -111,4 +111,23 @@ head:
 
 添加完毕之后，网页也就有了对应的 description/keywords
 
+## 如何添加谷歌统计代码
+
+官方给出了社区插件：[社区插件](https://theme-hope.vuejs.press/zh/cookbook/vuepress/plugin.html#%E7%A4%BE%E5%8C%BA%E6%8F%92%E4%BB%B6)
+
+但我试了下，不是很有用
+
+最后采用的是比较笨的方法，在 `head` 中，添加如下统计代码：
+
+```
+    ['script', { src: "https://www.googletagmanager.com/gtag/js?id=G- XXXXXXXXXX",async: true}],
+    ['script', {},
+                " window.dataLayer = window.dataLayer || [];\
+                function gtag(){dataLayer.push(arguments);}\
+                gtag('js', new Date());\
+                gtag('config', 'G-XXXXXXXXXX');"],
+```
+
+接下来验证是否设置成功，来到网站， F12 打开看看有没有发送 `collect` 请求,有发送则说明设置成功
+
 目前是遇到了这些问题，后续有遇到新的问题的话，再来补充～
