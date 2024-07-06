@@ -1,6 +1,7 @@
 ---
 title: nextjs & tailwind css 使用心得
 date: 2024-06-06
+description: tailwind css使用心得；nextjs 折腾心得；基于 nextjs 的文档模板 nextra
 ---
 
 最近折腾了一下 nextjs 和 tailwind css，总结一些使用心得

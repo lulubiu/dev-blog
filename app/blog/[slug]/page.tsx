@@ -48,6 +48,7 @@ export async function generateMetadata({ params }: Props) {
   return {
     ...siteConfig,
     title: `${post?.metadata.title || "404"} | ${siteConfig.name}`,
+    description: `${post?.metadata.description}`,
   };
 }
 

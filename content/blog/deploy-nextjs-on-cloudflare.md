@@ -1,6 +1,7 @@
 ---
 title: 在 cloudflare 上部署 nextjs 项目
 date: 2024-06-07
+description: nextjs 部署在 cloudflare 上，nextjs 对应配置；踩坑分享
 ---
 
 最近在群里看到有人说，cloudflare 也可以部署网站，我挺惊讶的，因为我一直用它来管理我在 namesilo 上买的域名，然后用下它的 cdn 网络，其他功能就没怎么用过了

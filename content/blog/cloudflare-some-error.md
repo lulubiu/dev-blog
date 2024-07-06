@@ -1,6 +1,7 @@
 ---
 title: 在 cloudflare 上踩的一些坑
 date: 2024-06-13
+description: cloudflare上报错ERR_TOO_MANY_REDIRECTS；cloudflare域名托管；重定向规则设置
 ---
 
 ## 部署网站，报错: ERR_TOO_MANY_REDIRECTS

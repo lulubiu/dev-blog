@@ -1,6 +1,7 @@
 ---
 title: vuepress-theme-hope + vercel 部署踩坑经验分享
 date: 2024-07-03
+description: 网站样式丢失问题解决；网站 logo 添加；sitemap 自动生成；vercel 部署报错；给网站添加 description/keywords；添加谷歌统计代码
 ---
 
 本来是计划用 vuepress 框架来搭建一个网站的，结果发现了上手更容易的网站框架：vuepress-theme-hope
