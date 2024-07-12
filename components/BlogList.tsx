@@ -1,6 +1,7 @@
 import { BlogPost } from "@/types/blog";
 import dayjs from "dayjs";
-import Link from "next/link";
+// import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 export default async function BlogList({
   isSide,

@@ -7,6 +7,7 @@ import "@/styles/globals.css";
 import "@/styles/loading.css";
 import { BlogPost, PostsByMonth } from "@/types/blog";
 import { Viewport } from "next";
+import { ViewTransitions } from "next-view-transitions";
 
 export const metadata = {
   ...siteConfig,
@@ -26,20 +27,22 @@ export default async function RootLayout({
     await getBlogPosts();
 
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head />
-      <body className="min-h-screen bg-background antialiased">
-        <ThemeProvider
-          attribute="class"
-          enableSystem={false}
-          defaultTheme={siteConfig.defaultNextTheme}
-          forcedTheme={siteConfig.defaultNextTheme}
-        >
-          <Header posts={posts} />
-          <main className="flex flex-col items-center py-6">{children}</main>
-          <Footer />
-        </ThemeProvider>
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang="en" suppressHydrationWarning>
+        <head />
+        <body className="min-h-screen bg-background antialiased">
+          <ThemeProvider
+            attribute="class"
+            enableSystem={false}
+            defaultTheme={siteConfig.defaultNextTheme}
+            forcedTheme={siteConfig.defaultNextTheme}
+          >
+            <Header posts={posts} />
+            <main className="flex flex-col items-center py-6">{children}</main>
+            <Footer />
+          </ThemeProvider>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }
