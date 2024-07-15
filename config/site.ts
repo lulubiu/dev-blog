@@ -19,7 +19,7 @@ const baseSiteConfig = {
   },
   headerLinks: [
     { name: 'buyMeCoffee', href: "https://ko-fi.com/lulubiu", icon: SiBuymeacoffee },
-    { name: 'wechat', href: "./wechat.jpg", icon: BsWechat },
+    { name: 'wechat', href: "/wechat.jpg", icon: BsWechat },
   ]
 }
 
