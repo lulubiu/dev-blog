@@ -45,6 +45,93 @@ export default async function Page() {
 
             <li>
               <a href="#" className="block h-full rounded-lg border border-gray-700 p-4 hover:border-pink-600">
+                <strong className="font-medium text-white">怎么赚钱？低买高卖。如何变富有？赚的比花的多 -2024.07.11</strong>
+              </a>
+            </li>
+            
+            <li>
+              <a href="#" className="block h-full rounded-lg border border-gray-700 p-4 hover:border-pink-600">
+                <strong className="font-medium text-white">做真正喜欢的事情时，是没有坚持这一说的 -2024.06.29</strong>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" className="block h-full rounded-lg border border-gray-700 p-4 hover:border-pink-600">
+                <strong className="font-medium text-white">做的是指数增长的事情，就不要想得到线性增长的结果 -2024.06.10</strong>
+              </a>
+            </li>
+            
+            <li>
+              <a href="#" className="block h-full rounded-lg border border-gray-700 p-4 hover:border-pink-600">
+                <strong className="font-medium text-white">当做一个选择时，当然会有风险存在。
+                  但不做任何选择，就一定没有风险吗。
+                  有没有可能，不做选择才是最大的风险 -2024.05.29</strong>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" className="block h-full rounded-lg border border-gray-700 p-4 hover:border-pink-600">
+                <strong className="font-medium text-white">不对别人有期待，只对自己有要求 -2024.05.15</strong>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" className="block h-full rounded-lg border border-gray-700 p-4 hover:border-pink-600">
+                <strong className="font-medium text-white">意见就是意见，它不是命令，不是决策。可以不接受，但要多听 -2024.05.09</strong>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" className="block h-full rounded-lg border border-gray-700 p-4 hover:border-pink-600">
+                <strong className="font-medium text-white">所谓的问题，大概率不是能力问题，就是意愿问题 -2024.04.24</strong>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" className="block h-full rounded-lg border border-gray-700 p-4 hover:border-pink-600">
+                <strong className="font-medium text-white">各种 try ，好过原地等待 -2024.04.15</strong>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" className="block h-full rounded-lg border border-gray-700 p-4 hover:border-pink-600">
+                <strong className="font-medium text-white">不夸大自己，也不贬低自己 -2024.04.13</strong>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" className="block h-full rounded-lg border border-gray-700 p-4 hover:border-pink-600">
+                <strong className="font-medium text-white">评价总是很容易，做到却是不容易 -2024.04.12</strong>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" className="block h-full rounded-lg border border-gray-700 p-4 hover:border-pink-600">
+                <strong className="font-medium text-white">不止要尽一己之力，还要会借他人之力，这才是“尽力”-2024.04.06</strong>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" className="block h-full rounded-lg border border-gray-700 p-4 hover:border-pink-600">
+                <strong className="font-medium text-white">感觉带来尝试，尝试带来经验，经验带来能力，能力带来自信 -2024.03.24</strong>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" className="block h-full rounded-lg border border-gray-700 p-4 hover:border-pink-600">
+                <strong className="font-medium text-white">拥有的不是太少了，而是太多了 -2024.03.24</strong>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" className="block h-full rounded-lg border border-gray-700 p-4 hover:border-pink-600">
+                <strong className="font-medium text-white">为什么说“焦虑的反面是具体”，是因为把面对的困难/挑战，一一写下来的时候，就是在面对它，在思考如何解决。
+                  选择面对而不是逃避之后，焦虑也就不复存在 -2024.03.23</strong>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" className="block h-full rounded-lg border border-gray-700 p-4 hover:border-pink-600">
                 <strong className="font-medium text-white">“找”字上面加一点，就是“我”字。
                   从造字方面就能看出，其实“我”的一生，就是寻找自己独特的那一点的一生 -2024.03.21</strong>
               </a>
