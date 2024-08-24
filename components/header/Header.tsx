@@ -19,12 +19,12 @@ const Header = ({ posts }: { posts: BlogPost[] }) => {
               width={24}
               height={24}
             />
-            <span className="text-gray-100 hidden sm:block">Developer.lulu 的个人博客</span>
+            <span className="text-stone-400 hidden sm:block">Developer.lulu 的个人博客</span>
           </Link>
           <div className="hidden md:flex md:gap-x-6"></div>
         </div>
 
-        <div className="hidden md:flex items-center gap-4 ml-4 h-12 w-full max-w-fit rounded-full bg-content2 px-4 dark:bg-content1">
+        <div className="hidden md:flex items-center gap-4 ml-4 h-12 w-full max-w-fit rounded-full px-4 bg-[hsl(var(--main)/0.8)]">
           <HeaderMenu />
         </div>
 

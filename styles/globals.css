@@ -10,9 +10,9 @@ html {
  
 @layer base {
   :root {
-    /* #9bdbee */
-    --main:  194, 70.9%, 77.1%;
-    --main-foreground:  210, 80%, 88%;
+    /* #e3e8ef */
+    --main:  214, 20%, 91%;
+    --main-foreground:  214, 30%, 81%;
 
     /* #ffce55 */
     --mainHover:  43, 100%, 66.7%;
@@ -50,16 +50,15 @@ html {
   }
  
   .dark {
-    /* #9bdbee */
-    --main:  194, 70.9%, 77.1%;
-    --main-foreground:  210, 80%, 88%;
+    /* #e3e8ef */
+    --main:  214, 20%, 91%;
+    --main-foreground:  214, 30%, 81%;
 
-    /* #ffce55 */
-    --mainHover:  43, 100%, 66.7%;
-    --mainHover-foreground:  60, 100%, 80%;
+    --mainHover:  199, 94%, 60%;
+    --mainHover-foreground:  199, 94%, 80%;
 
-    --background: 231 14% 18%;
-    --foreground: 210 40% 98%;
+    --background: 220 41% 11%;
+    --foreground: 0 0% 100%;
   
     --card: 231 14% 18%;
     --card-foreground: 210 40% 98%;
