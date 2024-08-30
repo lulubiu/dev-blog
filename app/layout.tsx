@@ -8,6 +8,12 @@ import "@/styles/loading.css";
 import { BlogPost, PostsByMonth } from "@/types/blog";
 import { Viewport } from "next";
 import { ViewTransitions } from "next-view-transitions";
+import { Inter } from 'next/font/google';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export const metadata = {
   ...siteConfig,
@@ -28,7 +34,7 @@ export default async function RootLayout({
 
   return (
     <ViewTransitions>
-      <html lang="en" suppressHydrationWarning>
+      <html lang="zh" className={inter.className} suppressHydrationWarning>
         <head />
         <body className="min-h-screen bg-background antialiased">
           <ThemeProvider

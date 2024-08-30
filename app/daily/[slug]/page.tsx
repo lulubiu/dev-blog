@@ -113,3 +113,5 @@ export async function generateStaticParams() {
     slug: post.metadata.slug,
   }));
 }
+
+export const revalidate = 3600; // 每小时重新验证一次

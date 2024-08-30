@@ -2,6 +2,7 @@ import { Aside } from "@/components/mdx/Aside";
 import { Callout } from "@/components/mdx/Callout";
 import { MdxCard } from "@/components/mdx/MdxCard";
 import React, { ReactNode } from "react";
+import Image from 'next/image';
 
 interface HeadingProps {
   level: 1 | 2 | 3 | 4 | 5 | 6;
@@ -111,6 +112,7 @@ const MDXComponents: MDXComponentsProps = {
   Aside,
   Callout,
   Card: MdxCard,
+  Image: Image,
 };
 
 export default MDXComponents;

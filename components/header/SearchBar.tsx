@@ -7,8 +7,9 @@ import { BlogPost } from "@/types/blog";
 import { SearchResult } from "@/types/search";
 import { Transition } from "@headlessui/react";
 import Link from "next/link";
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect } from "react";
 import { HighlightMatches } from "./HighlightMatches";
+import { debounce } from 'lodash';
 
 const SearchBar = ({ posts }: { posts: BlogPost[] }) => {
   const [loading, setLoading] = useState(false);
@@ -48,7 +49,7 @@ const SearchBar = ({ posts }: { posts: BlogPost[] }) => {
    */
   const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
-    handleChange(value);
+    setQuery(value); // 修改这一行
     setShow(Boolean(value));
   };
 
@@ -70,6 +71,18 @@ const SearchBar = ({ posts }: { posts: BlogPost[] }) => {
     handleChange("");
     setShow(false);
   }, [handleChange]);
+
+  const debouncedSearch = useCallback(
+    debounce(async (value: string) => {
+      const results = await doSearch(value);
+      setResults(results); 
+    }, 300),
+    []
+  );
+
+  useEffect(() => {
+    debouncedSearch(query); 
+  }, [query, debouncedSearch]); 
 
   return (
     <>

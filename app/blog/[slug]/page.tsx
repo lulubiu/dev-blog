@@ -1,6 +1,6 @@
 import BlogList from "@/components/BlogList";
 import MDXComponents from "@/components/mdx/MDXComponents";
-import TOC from "@/components/TOC";
+import dynamic from 'next/dynamic';
 import { Separator } from "@/components/ui/separator";
 import { siteConfig } from "@/config/site";
 import { getBlogPosts } from "@/lib/blog";
@@ -18,6 +18,10 @@ type Props = {
     slug: string;
   };
 };
+
+const TOC = dynamic(() => import('@/components/TOC'), {
+  loading: () => <p>加载目录中...</p>
+});
 
 const options = {
   parseFrontmatter: true,
@@ -119,3 +123,5 @@ export async function generateStaticParams() {
     slug: post.metadata.slug,
   }));
 }
+
+export const revalidate = 3600; // 每小时重新验证一次

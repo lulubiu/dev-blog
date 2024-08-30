@@ -14,7 +14,7 @@ export async function getBlogPosts(): Promise<{ posts: BlogPost[]; postsByMonth:
       const fullPath = path.join(postsDirectory, filename)
       const fileContents = await fs.promises.readFile(fullPath, 'utf8')
 
-      const slug = filename.replace('.md', '')
+      const slug = filename.replace(/\.mdx?$/, '')
       const { data, content } = matter(fileContents)
       data.slug = slug
       const month = dayjs(data.date).format('YYYY-MM-DD').slice(0, 7);
