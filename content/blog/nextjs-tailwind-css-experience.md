@@ -12,7 +12,7 @@ description: tailwind css使用心得；nextjs 折腾心得；基于 nextjs 的�
 
 刚开始尝试 tailwind css 的时候，就做了一个导航站，界面是这样：
 
-![navbar](/assets/nextjs-tailwind-css-experience/navbar.jpg)
+<img src="/assets/nextjs-tailwind-css-experience/navbar.webp" loading="lazy" alt="navbar" />
 
 对于一个前端小白来说，能够做出来一个导航网站，我对自己已经相当满意了 🤣
 
@@ -40,7 +40,7 @@ tailwind css 使用起来也非常简单，直接在 html 文件中引入一下 
 
 如果你是用 `app` 目录的话，在 `layout.tsx` 中引入相关组件，然后在 `body` 中直接一行代码就搞定了，详细可以看下图:
 
-![layout布局](/assets/nextjs-tailwind-css-experience/layout.jpg)
+<img src="/assets/nextjs-tailwind-css-experience/layout.webp" loading="lazy" alt="layout布局" />
 
 还是挺方便的
 

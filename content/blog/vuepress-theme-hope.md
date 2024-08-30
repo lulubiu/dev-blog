@@ -16,7 +16,7 @@ description: 网站样式丢失问题解决；网站 logo 添加；sitemap 自�
 
 比如我的仓库名称是 `blog`，`base` 路径这里写成 `/blog/` 就可以了，如果你的仓库名称是 `myblog` 对应做修改就行了
 
-![vuepress-theme-hope-base路径修改](/assets/vuepress-theme-hope/blog.jpg)
+<img src="/assets/vuepress-theme-hope/blog.webp" loading="lazy" alt="vuepress-theme-hope-base路径修改" />
 
 修改了之后，开启 gitpage 功能，然后访问 .io 界面发现，果然问题解决了
 
@@ -24,7 +24,7 @@ description: 网站样式丢失问题解决；网站 logo 添加；sitemap 自�
 
 给我整懵逼了。。。遇事不决，就问问 gpt
 
-![vuepress-theme-hope-网站样式丢失修改](/assets/vuepress-theme-hope/gpt.jpg)
+<img src="/assets/vuepress-theme-hope/gpt.webp" loading="lazy" alt="vuepress-theme-hope-网站样式丢失修改" />
 
 看到它给的答案之后，我意识到，还是 `base` 路径设置的问题，给的方案就是把 `base` 路径改成自己的域名
 
@@ -36,11 +36,11 @@ description: 网站样式丢失问题解决；网站 logo 添加；sitemap 自�
 
 所以我项目的最后配置是这样的：
 
-![vuepress-theme-hope-网站样式丢失问题解决](/assets/vuepress-theme-hope/dest.jpg)
+<img src="/assets/vuepress-theme-hope/dest.webp" loading="lazy" alt="vuepress-theme-hope-网站样式丢失问题解决" />
 
 正好我用的 vercel 平台部署的，它默认的输出目录也是这个：
 
-![vercel-默认输出目录](/assets/vuepress-theme-hope/vercel.jpg)
+<img src="/assets/vuepress-theme-hope/vercel.webp" loading="lazy" alt="vercel-默认输出目录" />
 
 ## 访问网站时，我的网站 logo 怎么没有了
 
@@ -50,7 +50,7 @@ description: 网站样式丢失问题解决；网站 logo 添加；sitemap 自�
 
 翻了翻源码，找到了配置方法，在 `config.ts` 文件中，添加上 `head` 设置就可以了
 
-![vuepress-theme-hope-head标签设置](/assets/vuepress-theme-hope/head.jpg)
+<img src="/assets/vuepress-theme-hope/head.webp" loading="lazy" alt="vuepress-theme-hope-head标签设置" />
 
 ## 不生成 sitemap
 
@@ -62,7 +62,7 @@ vuepress-theme-hope 主题是默认生成 sitemap 的，但我不知道我做了
 
 将这一项更改成你自己的域名，问题解决
 
-![vuepress-theme-hope-hostname设置](/assets/vuepress-theme-hope/hostname.jpg)
+<img src="/assets/vuepress-theme-hope/hostname.webp" loading="lazy" alt="vuepress-theme-hope-hostname设置" />
 
 发现这个问题时，是整个网站都上线运行了，提交网址到 google search console 后台时发现没有 sitemap，然后才发现这个问题的
 
@@ -72,25 +72,25 @@ vuepress-theme-hope 主题是默认生成 sitemap 的，但我不知道我做了
 
 网站搭建好之后，是在 vercel 平台上部署的，结果我还没休息一分钟，一个报错信息就过来了
 
-![vercel报错信息](/assets/vuepress-theme-hope/vercel-error.jpg)
+<img src="/assets/vuepress-theme-hope/vercel-error.webp" loading="lazy" alt="vercel报错信息" />
 
 之所以出现这个问题，是因为 vuepress-theme-hope 的 package.json 文件中的脚本运行命令，和 vercel 设置的不一样，如图，vuepress-theme-hope 的运行命令是这样的👇
 
-![vuepress-theme-hope-packagejson-脚本命令](/assets/vuepress-theme-hope/packagejson.jpg)
+<img src="/assets/vuepress-theme-hope/packagejson.webp" loading="lazy" alt="vuepress-theme-hope-packagejson-脚本命令" />
 
 而 vercel 的运行命令是这样的👇
 
-![vercel部署配置](/assets/vuepress-theme-hope/vercel-deploy-config.jpg)
+<img src="/assets/vuepress-theme-hope/vercel-deploy-config.webp" loading="lazy" alt="vercel部署配置" />
 
 解决方案就是，要不更改 vercel 的 deploy 配置，要不更改 vuepress-theme-hope 的脚本运行命令
 
 选择更改 vercel 配置的话，重写 vercel 的命令即可，详细可参考下图（是不是觉得眼熟？对的，这张图在前面出现过）：
 
-![vercel-默认输出目录](/assets/vuepress-theme-hope/vercel.jpg)
+<img src="/assets/vuepress-theme-hope/vercel.webp" loading="lazy" alt="vercel-默认输出目录" />
 
 选择更改 vuepress-theme-hope 的脚本运行命令的话，可以参考下图：
 
-![vuepress-theme-hope-脚本命令更改](/assets/vuepress-theme-hope/change-packagejson.jpg)
+<img src="/assets/vuepress-theme-hope/change-packagejson.webp" loading="lazy" alt="vuepress-theme-hope-脚本命令更改" />
 
 这两种方案选择其中一个即可，问题就解决了
 
