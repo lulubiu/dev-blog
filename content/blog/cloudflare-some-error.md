@@ -17,7 +17,7 @@ cloudflare 将重定向转发给用户，但是由于客户端已经在 https://
 找到原因之后，解决方案也就出来了，将 cloudflare 的 SSL/TLS 设置为 `完全(严格)`   
 要求 cloudflare 发送的请求就是 https ，打破循环   
 
-![ERR_TOO_MANY_REDIRECTS问题解决方案](/assets/cloudflare-some-error/error.jpg)
+<img src="/assets/cloudflare-some-error/error.webp" loading="lazy" alt="ERR_TOO_MANY_REDIRECTS问题解决方案" />
 
 ## NameSilo + Cloudflare 给网站加个域名
 
@@ -29,13 +29,13 @@ cloudflare 将重定向转发给用户，但是由于客户端已经在 https://
 
 看到 cloudflare 支持托管域名时，就想把 NameSilo 上面购买的域名托管到 cloudflare 上面去
 
-主要操作就是，先来到 cloudflare 界面，添加站点(登录到 cloudflare 之后，右上角就能看到
+主要操作就是，先来到 cloudflare 界面，添加站点(登录到 cloudflare 之后，右上角就能看到\
 
-![添加站点](/assets/cloudflare-some-error/add-website.jpg)
+<img src="/assets/cloudflare-some-error/add-website.webp" loading="lazy" alt="添加站点" />
 
 按照提示一步步操作就好，接下来需要去 NameSilo 的后台， 找到你的域名管理界面，在最右边能看到如下图的标志，点进去到界面将 name server 更改为 cf 上面的 dns 记录即可
 
-![更改NameSilo上的dns记录](/assets/cloudflare-some-error/change-dns.jpg)
+<img src="/assets/cloudflare-some-error/change-dns.webp" loading="lazy" alt="更改NameSilo上的dns记录" />
 
 操作完毕之后，等一会儿，就能在 cf 上看到域名有效，以后在 cf 上操作就行了
 
@@ -62,7 +62,7 @@ cloudflare 将重定向转发给用户，但是由于客户端已经在 https://
 
 详细见下图:
 
-![规则设置](/assets/cloudflare-some-error/config.jpg)
+<img src="/assets/cloudflare-some-error/config.webp" loading="lazy" alt="规则设置" />
 
 更详细的可参考官方指导文档: [cloudflare doc](https://developers.cloudflare.com/rules/reference/page-rules-migration/#migrate-forwarding-url)
 
