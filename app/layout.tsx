@@ -35,7 +35,6 @@ export default async function RootLayout({
   return (
     <ViewTransitions>
       <html lang="zh" className={inter.className} suppressHydrationWarning>
-        <head />
         <body className="min-h-screen bg-background antialiased">
           <ThemeProvider
             attribute="class"
@@ -44,10 +43,16 @@ export default async function RootLayout({
             forcedTheme={siteConfig.defaultNextTheme}
           >
             <Header posts={posts} />
-            <main className="flex flex-col items-center py-6">{children}</main>
+
+            <main className="flex flex-col items-center py-6">
+              {children}
+            </main>
+
             <Footer />
+
           </ThemeProvider>
         </body>
+
       </html>
     </ViewTransitions>
   );
