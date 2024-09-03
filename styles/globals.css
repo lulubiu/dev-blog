@@ -1,5 +1,4 @@
 @import './scrollbar.css';
-@import url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -89,6 +88,13 @@ html {
 }
 
 @layer base {
+  @font-face {
+    font-family: 'LXGW WenKai Lite';
+    src: url('../public/fonts/LXGWWenKaiLite-Light.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
   * {
     @apply border-border;
   }
