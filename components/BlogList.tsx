@@ -27,6 +27,7 @@ export default async function BlogList({
           )}
           <Link
             href={`/blog/${post.metadata.slug}`}
+            title={post.metadata.title}
             className="link-default truncate transition-colors duration-500 ease-in-out"
           >
             {post.metadata.title}

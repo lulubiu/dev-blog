@@ -26,6 +26,7 @@ export default async function DailyList({
           )}
           <Link
             href={`/daily/${post.slug}`}
+            title={post.title}
             className="link-default truncate transition-colors duration-500 ease-in-out"
           >
             {post.title}
