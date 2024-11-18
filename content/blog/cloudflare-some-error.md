@@ -66,6 +66,8 @@ cloudflare 将重定向转发给用户，但是由于客户端已经在 https://
 
 更详细的可参考官方指导文档: [cloudflare doc](https://developers.cloudflare.com/rules/reference/page-rules-migration/#migrate-forwarding-url)
 
+设置完毕之后，再去 dns 那里，设置一条 `CNAME` 记录即可
+
 接下来访问 `www.lulubiu.com` 时，会自动重定向到 `lulubiu.com`
 
 问题解决
