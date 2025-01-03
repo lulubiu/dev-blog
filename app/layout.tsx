@@ -9,6 +9,7 @@ import { BlogPost, PostsByMonth } from "@/types/blog";
 import { Viewport } from "next";
 import { ViewTransitions } from "next-view-transitions";
 import { Inter } from 'next/font/google';
+import GoogleAdsense from "@/app/GoogleAdsense";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -51,6 +52,14 @@ export default async function RootLayout({
             <Footer />
 
           </ThemeProvider>
+
+          {process.env.NODE_ENV === "development" ? (
+            <></>
+          ) : (
+            <>
+              <GoogleAdsense />
+            </>
+          )}
         </body>
 
       </html>
