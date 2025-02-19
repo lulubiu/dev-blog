@@ -59,10 +59,10 @@ export default async function RootLayout({
           ) : (
             <>
               <GoogleAdsense />
+              <GoogleAnalytics gaId="G-6K7V0ZNCVM" />
             </>
           )}
         </body>
-        <GoogleAnalytics gaId="G-6K7V0ZNCVM" />
       </html>
     </ViewTransitions>
   );
