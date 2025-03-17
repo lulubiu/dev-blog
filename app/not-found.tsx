@@ -1,5 +1,9 @@
 import Image from "next/image";
 
+export const metadata = {
+  title: "404 - 页面不存在",
+};
+
 export default function NotFound() {
   return (
     <div className="mx-automax-h-screen flex flex-col items-center">
