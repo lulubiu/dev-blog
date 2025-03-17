@@ -9,7 +9,7 @@ const nextConfig = {
     optimizeCss: true,
   },
   // Optionally, add any other Next.js config below
-  // output: "export"
+  output: "export"
 };
 
 const withMDX = createMDX({
