@@ -71,3 +71,39 @@ cloudflare 将重定向转发给用户，但是由于客户端已经在 https://
 接下来访问 `www.lulubiu.com` 时，会自动重定向到 `lulubiu.com`
 
 问题解决
+
+## vite 框架项目部署到 cloudflare 上，访问具体界面时报 404
+
+update：2025-04-06 15:37:50
+
+刚刚把一个 html 项目重构成了 vite 框架的，因为 html 项目想要更改一个 footer 内容，就要所有文件都动一遍，想来想去，不如花点时间重构一下，这样以后更改起来方便一些
+
+因为是部署在 cloudflare 上，nextjs 框架支持不是很好，最后选用了 vite 框架
+
+刚刚兴冲冲重构完毕，部署完成之后，访问了一下项目，发现 index 界面是没问题的，一访问具体的界面就报错 404 ，给我整懵逼了，因为我在本地都运行看过没问题之后，才提交版本的
+
+更神奇的是，访问具体的工具界面报错，但是访问 about/terms of use 等界面却是没问题，在本地构建之后，如果使用 `npx serve -s dist` 在本地看就没事，直接 `npx serve dist`命令就和部署之后的现象一致
+
+问了一下 gpt 才知道，使用 `-s` 参数时，是开启了服务器模式，如果部署在 cloudflare 上需要开启 SPA 模式，我瞅了一圈，也没看到怎么开启，后来在官方文档中： [Serving Pages](https://developers.cloudflare.com/pages/configuration/serving-pages/) 中找到了答案
+
+> If your project does not include a top-level 404.html file, Pages assumes that you are deploying a single-page application. This includes frameworks like React, Vue, and Angular. Pages' default single-page application behavior matches all incoming paths to the root (/), allowing you to capture URLs like /about or /help and respond to them from within your SPA.
+
+简单讲就是，vite 框架构建完成之后，有 dist 目录，在这个目录下，和 `index.html` 一起的没有 404.html 的话，默认就是开启 SPA 模式的
+
+看到这个，我一看，好家伙，我确实在 public 目录添加了一个 404.html ，怪不得一直访问具体的工具，显示 404
+
+找到问题，解决就很好办了，删除 public 目录下的 404.html ，另外新建一个 404 component
+
+还有一个点，因为刚开始排查错误时，对配置文件做了更改，我不确定是不是这一点也起到了作用，记录在这里
+
+在 `vite.config.ts` 文件中，添加 `base` 路径，具体如下：
+
+```
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+  base: '/'
+})
+```
+
+以上，问题解决
