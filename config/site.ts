@@ -1,5 +1,4 @@
 import { SiteConfig } from "@/types/siteConfig";
-import { SiBuymeacoffee } from "react-icons/si";
 import { BsWechat } from "react-icons/bs";
 
 const baseSiteConfig = {
@@ -18,7 +17,6 @@ const baseSiteConfig = {
     apple: "/logo.png",
   },
   headerLinks: [
-    { name: 'buyMeCoffee', href: "https://ko-fi.com/lulubiu", icon: SiBuymeacoffee },
     { name: 'wechat', href: "/wechat", icon: BsWechat },
   ]
 }
