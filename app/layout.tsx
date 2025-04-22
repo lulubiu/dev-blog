@@ -9,7 +9,6 @@ import { BlogPost, PostsByMonth } from "@/types/blog";
 import { Viewport } from "next";
 import { ViewTransitions } from "next-view-transitions";
 import { Inter } from 'next/font/google';
-import GoogleAdsense from "@/app/GoogleAdsense";
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({
@@ -58,7 +57,7 @@ export default async function RootLayout({
             <></>
           ) : (
             <>
-              <GoogleAdsense />
+              {/* <GoogleAdsense /> */}
               <GoogleAnalytics gaId="G-6K7V0ZNCVM" />
             </>
           )}
