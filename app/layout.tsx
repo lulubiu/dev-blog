@@ -10,6 +10,7 @@ import { Viewport } from "next";
 import { ViewTransitions } from "next-view-transitions";
 import { Inter } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google'
+import GoogleAdsense from "./GoogleAdsense";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -57,7 +58,7 @@ export default async function RootLayout({
             <></>
           ) : (
             <>
-              {/* <GoogleAdsense /> */}
+              <GoogleAdsense />
               <GoogleAnalytics gaId="G-6K7V0ZNCVM" />
             </>
           )}
