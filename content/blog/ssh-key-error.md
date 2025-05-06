@@ -55,4 +55,34 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
 以后如果再出现这种情况，我就单独删和密钥有关的文件，其他文件就不用动了
 
+---
+
+update：2025-05-06 12:03:21
+
+今天像往常一样提交代码时，报错，报了各种各样的错误，我把它们都贴在下面，如果你也遇到了，按照我的方式试一试，如果能解决就最好了，如果不能解决的话，放心，试一试也不会造成什么严重的后果
+
+刚开始是报错 `Connection closed by 127.0.0.1 port 7890`，一看很熟悉，这以前不是遇到过吗，所以当我看到，需要让我修改 port 端口的建议，就没动，看到有人建议 mac 下，设置 `~/.ssh/config` 即可，具体设置内容：
+
+```
+Host github.com
+    User git
+    ProxyCommand nc -v -x 127.0.0.1:7890 %h %p
+```
+
+就是添加最后一行的代理设置，感觉这个靠谱一些，try 了一下，报了新的错误 `Connection to ssh.github.com port 22 [tcp/ssh] succeeded!Connection closed by UNKNOWN port 65535 `，看意思是，22 端口可以通过了，但是 22 端口立刻又被关掉了
+
+此时就想到了，既然 22 端口不让用，刚才看到建议修改端口的建议，或许就有用了，依旧是 `~/.ssh/config` 文件，将端口 22 改为 443，在提交之前，我先尝试 clone 了一个项目到本地，ok，问题解决
+
+总结一下就是，如果你遇到  `Connection closed by 127.0.0.1 port 7890` & `Connection to ssh.github.com port 22 [tcp/ssh] succeeded!Connection closed by UNKNOWN port 65535 ` 错误时，在  `~/.ssh/config` 文件中，修改端口 & 添加代理设置即可
+
+我的  `~/.ssh/config` 文件内容如下：
+
+```
+Host github.com
+  HostName ssh.github.com
+  User git
+  Port 443
+  ProxyCommand nc -v -x 127.0.0.1:7890 %h %p
+```
+
 以上，感谢您的阅读
