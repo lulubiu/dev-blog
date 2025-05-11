@@ -95,6 +95,14 @@ html {
   body {
     @apply bg-background text-foreground;
     font-family: "LXGW WenKai", sans-serif;
+    font-size: 16px;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
   }
 }
 .link-hover {
@@ -107,20 +115,81 @@ html {
   @apply text-main hover:text-mainHover underline;
 }
 h1 {
-  @apply text-4xl font-bold mt-6 mb-4
+  @apply text-2xl md:text-4xl font-bold mt-6 mb-4 break-words hyphens-auto
 }
 h2 {
-  @apply text-3xl font-semibold mt-6 mb-4 border-b-2 border-gray-200 pb-2
+  @apply text-xl md:text-3xl font-semibold mt-6 mb-4 border-b-2 border-gray-200 pb-2 break-words
 }
 h3 {
-  @apply text-2xl font-semibold mt-6 mb-4
+  @apply text-lg md:text-2xl font-semibold mt-6 mb-4 break-words
 }
 h4 {
-  @apply text-xl font-semibold mt-6 mb-4
+  @apply text-base md:text-xl font-semibold mt-6 mb-4 break-words
 }
 h5 {
-  @apply text-lg font-semibold mt-6 mb-4
+  @apply text-sm md:text-lg font-semibold mt-6 mb-4 break-words
 }
 h6 {
-  @apply text-base font-semibold mt-6 mb-4
+  @apply text-xs md:text-base font-semibold mt-6 mb-4 break-words
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  code {
+    word-break: break-word;
+  }
+
+  blockquote {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* 博客文章内容宽度控制 */
+  article {
+    padding: 0 0.5rem;
+  }
+
+  /* 链接在触摸屏上更容易点击 */
+  a {
+    padding: 0.2rem 0;
+  }
+  
+  /* 长标题处理 */
+  h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+/* 长文本处理 */
+.long-text {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* 控制代码块的溢出 */
+pre code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* 平滑滚动 */
+html {
+  scroll-behavior: smooth;
 }

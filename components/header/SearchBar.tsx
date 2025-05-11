@@ -95,8 +95,8 @@ const SearchBar = ({ posts }: { posts: BlogPost[] }) => {
         onBlur={() => {
           setShow(false);
         }}
-        placeholder="Search……"
-        className="border-gray-600 focus:border-0 rounded-full"
+        placeholder="Search..."
+        className="border-gray-600 focus:border-0 rounded-full w-16 md:w-auto h-8 md:h-10 text-xs md:text-sm px-2 md:px-3"
       />
 
       <Transition
@@ -111,9 +111,9 @@ const SearchBar = ({ posts }: { posts: BlogPost[] }) => {
           className={cn(
             "scrollbar",
             "rounded-md border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800",
-            "p-4 border border-gray-600 bg-gray-900",
-            "absolute top-full right-0 z-20 mt-2 overflow-auto overscroll-contain rounded-xl py-2.5 shadow-xl",
-            "min-h-[100px] max-h-[400px]",
+            "p-2 md:p-4 border border-gray-600 bg-gray-900",
+            "absolute top-full right-0 z-20 mt-2 overflow-auto overscroll-contain rounded-xl py-2 md:py-2.5 shadow-xl",
+            "min-h-[100px] max-h-[300px] md:max-h-[400px]",
             "w-[90vw] sm:w-[400px]"
           )}
           style={{
@@ -121,7 +121,7 @@ const SearchBar = ({ posts }: { posts: BlogPost[] }) => {
           }}
         >
           {error ? (
-            <span className="block select-none p-8 text-center text-sm text-gray-400">
+            <span className="block select-none p-4 md:p-8 text-center text-xs md:text-sm text-gray-400">
               {error}
             </span>
           ) : results && results.length > 0 ? (
@@ -138,13 +138,13 @@ const SearchBar = ({ posts }: { posts: BlogPost[] }) => {
                     "contrast-more:border",
                     "text-gray-800 contrast-more:border-transparent dark:text-gray-300",
                     "hover:bg-primary-500/10 hover:text-primary-600 contrast-more:hover:border-primary-500",
-                    "block scroll-m-12 px-2.5 py-2"
+                    "block scroll-m-12 px-2 md:px-2.5 py-1.5 md:py-2"
                   )}
                 >
-                  <div className="text-base font-semibold leading-5">
+                  <div className="text-sm md:text-base font-semibold leading-5">
                     <HighlightMatches match={query} value={result.doc.title} />
                   </div>
-                  <div className="excerpt mt-1 text-sm leading-[1.35rem] text-gray-600 dark:text-gray-400 contrast-more:dark:text-gray-50">
+                  <div className="excerpt mt-1 text-xs md:text-sm leading-[1.25rem] md:leading-[1.35rem] text-gray-600 dark:text-gray-400 contrast-more:dark:text-gray-50">
                     <HighlightMatches
                       match={query}
                       value={result.doc.content}
@@ -154,8 +154,8 @@ const SearchBar = ({ posts }: { posts: BlogPost[] }) => {
               </Link>
             ))
           ) : (
-            <span className="block select-none p-8 text-center text-sm text-gray-400">
-              No results found.
+            <span className="block select-none p-4 md:p-8 text-center text-xs md:text-sm text-gray-400">
+              没有找到结果
             </span>
           )}
         </ul>

@@ -10,19 +10,26 @@ export default async function TimeLine({
 }) {
   return (
     <ScrollArea
-      className="h-72 w-32 rounded-md border border-gray-600 sticky top-0"
-      style={{ position: "sticky" }}
+      className="h-40 md:h-auto md:max-h-[460px] w-full md:w-full rounded-md border border-gray-600 md:sticky md:top-20"
+      style={{ position: "relative" }}
     >
-      <div className="p-4">
-        <h4 className="mb-4 text-sm font-medium leading-none">
-          <Link href="/">Time Line</Link>
+      <div className="p-3 md:p-4">
+        <h4 className="mb-3 md:mb-4 text-sm font-medium leading-none text-center md:text-left">
+          <Link href="/" className="text-main hover:text-mainHover">Time Line</Link>
         </h4>
-        {Object.keys(postsByMonth).map((month) => (
-          <div key={month}>
-            <Link href={`#${month}`}>{month}</Link>
-            <Separator className="my-2 bg-gray-600" />
-          </div>
-        ))}
+        <div className="flex md:flex-col flex-row flex-wrap gap-3 md:gap-2 justify-center md:justify-start">
+          {Object.keys(postsByMonth).map((month) => (
+            <div key={month} className="md:w-full">
+              <Link 
+                href={`#${month}`} 
+                className="whitespace-nowrap text-xs md:text-sm block text-center md:text-left hover:text-mainHover transition-colors duration-200"
+              >
+                {month}
+              </Link>
+              <Separator className="my-2 bg-gray-600 hidden md:block" />
+            </div>
+          ))}
+        </div>
       </div>
     </ScrollArea>
   );

@@ -9,17 +9,17 @@ import Link from "next/link";
 const Header = ({ posts }: { posts: BlogPost[] }) => {
   return (
     <header className="flex z-40 w-full h-auto py-2 px-2 items-center justify-center data-[menu-open=true]:border-none sticky top-0 inset-x-0 backdrop-blur-lg data-[menu-open=true]:backdrop-blur-xl backdrop-saturate-150 bg-background/70">
-      <nav className="z-40 flex px-0 md:px-6 gap-4 w-full flex-row relative flex-nowrap items-center justify-between h-[var(--navbar-height)] max-w-[1024px]">
+      <nav className="z-40 flex px-0 md:px-6 gap-2 md:gap-4 w-full flex-row relative flex-nowrap items-center justify-between h-[var(--navbar-height)] max-w-[1024px]">
        <div className="flex items-center md:gap-x-12">
           <Link href="/" className="flex items-center space-x-1 font-bold">
             <Image
               alt={siteConfig.name}
               src="/logo.svg"
-              className="w-8 h-8"
+              className="w-6 h-6 md:w-8 md:h-8"
               width={24}
               height={24}
             />
-            <span className="text-stone-400 hidden sm:block">Developer.lulu 的个人博客</span>
+            <span className="text-stone-400 text-xs md:text-base hidden sm:block">Developer.lulu 的个人博客</span>
           </Link>
           <div className="hidden md:flex md:gap-x-6"></div>
         </div>
@@ -28,7 +28,11 @@ const Header = ({ posts }: { posts: BlogPost[] }) => {
           <HeaderMenu />
         </div>
 
-        <div className="flex items-center">
+        <div className="flex md:hidden items-center ml-auto mr-2">
+          <HeaderMenu />
+        </div>
+
+        <div className="flex items-center gap-1 md:gap-4">
           <SearchBar posts={posts} />
           <HeaderLinks />
         </div>

@@ -6,7 +6,7 @@ const baseSiteConfig = {
   description:
     "Developer.lulu 的个人博客，记录在折腾过程中踩过的坑，学到的知识，研究的理论，一些思考与感悟",
   url: "https://lulubiu.com/",
-  metadataBase: 'https://lulubiu.com/',
+  metadataBase: new URL('https://lulubiu.com/'),
   alternates:{
     canonical: './'
   },

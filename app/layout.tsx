@@ -24,6 +24,10 @@ export const metadata = {
 
 export const viewport: Viewport = {
   themeColor: siteConfig.themeColors,
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
 };
 
 export default async function RootLayout({
@@ -46,7 +50,7 @@ export default async function RootLayout({
           >
             <Header posts={posts} />
 
-            <main className="flex flex-col items-center py-6">
+            <main className="flex flex-col items-center py-3 md:py-6 w-full">
               {children}
             </main>
 
