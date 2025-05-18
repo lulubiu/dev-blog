@@ -82,3 +82,7 @@ dev-blog/
 ## 许可证
 
 请查看 [LICENSE](LICENSE) 文件。
+
+## Thanks：
+
+该网站基于 [Weekly Boilerplate](https://github.com/weijunext/weekly-boilerplate) 修改
