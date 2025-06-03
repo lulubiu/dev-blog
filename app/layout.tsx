@@ -9,7 +9,6 @@ import { BlogPost, PostsByMonth } from "@/types/blog";
 import { Viewport } from "next";
 import { ViewTransitions } from "next-view-transitions";
 import { Inter } from 'next/font/google';
-import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -56,14 +55,6 @@ export default async function RootLayout({
             <Footer />
 
           </ThemeProvider>
-
-          {process.env.NODE_ENV === "development" ? (
-            <></>
-          ) : (
-            <>
-              <GoogleAnalytics gaId="G-6K7V0ZNCVM" />
-            </>
-          )}
         </body>
       </html>
     </ViewTransitions>

@@ -82,3 +82,9 @@ dev-blog/
 ## Thanks：
 
 该网站基于 [Weekly Boilerplate](https://github.com/weijunext/weekly-boilerplate) 修改
+
+----
+
+update： 2025-06-03 10:48:58
+
+cancel google analytics & google adsense
