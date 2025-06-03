@@ -73,11 +73,7 @@ dev-blog/
 
 ## 其他
 
-主域名是 [https://lulubiu.com](https://lulubiu.com)
-
-基于主域名，做了几个有意思的其他网站，放在了二级域名下
-- [免费在线游戏](https://game.lulubiu.com)
-- [有趣的计算器](https://calculator.lulubiu.com)
+欢迎访问 👉 [https://lulubiu.com](https://lulubiu.com)
 
 ## 许可证
 
