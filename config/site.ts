@@ -1,5 +1,5 @@
 import { SiteConfig } from "@/types/siteConfig";
-import { BsWechat } from "react-icons/bs";
+import { BsWechat,BsGithub } from "react-icons/bs";
 
 const baseSiteConfig = {
   name: "Developer.lulu",
@@ -17,6 +17,7 @@ const baseSiteConfig = {
     apple: "/logo.png",
   },
   headerLinks: [
+    { name: 'github', href: "https://github.com/zll-0405/dev-blog", icon: BsGithub },
     { name: 'wechat', href: "/wechat", icon: BsWechat },
   ]
 }
