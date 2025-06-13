@@ -72,11 +72,11 @@ export default async function BlogDetailsPage({ params }: Props) {
   const { content, metadata } = post;
 
   return (
-    <div className="flex flex-col md:flex-row w-full pt-4 md:pt-12">
-      <aside className="hidden md:block md:w-1/6 pl-0 md:pl-6 max-h-[90vh] h-full overflow-auto sticky top-16 left-0 mt-6">
+    <div className="flex flex-row w-full pt-12">
+      <aside className="hidden md:block md:w-1/5 pl-6 max-h-[90vh] h-full overflow-auto sticky top-16 left-0 mt-6">
         <BlogList isSide posts={posts} />
       </aside>
-      <div className="w-full md:w-3/6 px-3 md:px-6">
+      <div className="w-full md:w-3/5 px-6">
         <article id={`article`}>
           <h1 className="text-2xl md:text-3xl font-bold break-words hyphens-auto mb-6">
             {metadata.title}
@@ -111,10 +111,8 @@ export default async function BlogDetailsPage({ params }: Props) {
           </div>
         </div>
       </div>
-      <div className="hidden md:block md:w-2/6 pr-6 mt-6">
-        <div className="max-w-[200px] ml-auto sticky top-16">
-          <TOC />
-        </div>
+      <div className="hidden md:block md:w-1/5 pr-6 max-h-[90vh] h-full overflow-auto sticky top-16 left-0 mt-6">
+        <TOC />
       </div>
     </div>
   );
