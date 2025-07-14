@@ -6,19 +6,21 @@ import { getBlogPosts } from "@/lib/blog";
 import "@/styles/globals.css";
 import "@/styles/loading.css";
 import { BlogPost, PostsByMonth } from "@/types/blog";
-import { Viewport } from "next";
+import { Metadata, Viewport } from "next";
 import { ViewTransitions } from "next-view-transitions";
 import { Inter } from 'next/font/google';
+import GoogleAdsense from "./GoogleAdsense";
 
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
 })
 
-export const metadata = {
+export const metadata: Metadata = {
   ...siteConfig,
   title: siteConfig.name,
-};
+  metadataBase: new URL(siteConfig.url),
+};  
 
 export const viewport: Viewport = {
   themeColor: siteConfig.themeColors,
@@ -46,6 +48,7 @@ export default async function RootLayout({
             defaultTheme={siteConfig.defaultNextTheme}
             forcedTheme={siteConfig.defaultNextTheme}
           >
+            <GoogleAdsense />
             <Header posts={posts} />
 
             <main className="flex flex-col items-center py-3 md:py-6 w-full">
