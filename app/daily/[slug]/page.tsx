@@ -16,9 +16,9 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 const options = {
@@ -41,21 +41,21 @@ const options = {
 };
 
 export async function generateMetadata({ params }: Props) {
-  const { slug } = params;
+  const { slug } = await params;
   const { posts }: { posts: BlogPost[] } = await getDailyPosts();
   const post: BlogPost | undefined = posts.find(
     (post) => post.metadata.slug === slug
   );
 
   return {
-    ...siteConfig,
     title: `${post?.metadata.title || "404"} | ${siteConfig.name}`,
     description: `${post?.metadata.description}`,
+    metadataBase: new URL('https://lulubiu.com/'),
   };
 }
 
 export default async function ThinkDetailsPage({ params }: Props) {
-  const { slug } = params;
+  const { slug } = await params;
   const { posts }: { posts: BlogPost[] } = await getDailyPosts();
   const postIndex = posts.findIndex((post) => post.metadata.slug === slug);
   const post = posts[postIndex];

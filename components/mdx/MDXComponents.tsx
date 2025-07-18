@@ -11,7 +11,7 @@ interface HeadingProps {
 }
 
 const Heading: React.FC<HeadingProps> = ({ level, className, children }) => {
-  const HeadingTag = `h${level}` as keyof JSX.IntrinsicElements;
+  const HeadingTag = `h${level}` as keyof React.JSX.IntrinsicElements;
   const headingId = children?.toString() ?? "";
 
   return (

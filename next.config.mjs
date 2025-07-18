@@ -5,9 +5,6 @@ import remarkGfm from "remark-gfm";
 const nextConfig = {
   // Configure `pageExtensions`` to include MDX files
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
-  experimental: {
-    optimizeCss: true,
-  },
   // 编译优化
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
@@ -19,8 +16,6 @@ const nextConfig = {
   },
   // 压缩配置
   compress: true,
-  // 字体优化
-  optimizeFonts: true,
   // Optionally, add any other Next.js config below
   output: "export"
 };
