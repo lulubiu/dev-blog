@@ -15,7 +15,7 @@
 
 ## 技术栈
 
-- **框架**: Next.js 14, React 18
+- **框架**: Next.js 15, React 18
 - **样式**: TailwindCSS
 - **内容**: MDX, gray-matter, remark/rehype
 - **部署**: Cloudflare
@@ -85,6 +85,10 @@ dev-blog/
 
 ----
 
-update： 2025-06-03 10:48:58
+update： 2025-07-18 17:26:04
 
-cancel google analytics & google adsense
+升级了 nextjs 版本，从 14.x 升级到 15.x
+
+如果是部署在 cloudflare 平台，则需要添加一个环境变量 `NODE_VERSION = 18.18.0`
+
+愿，部署顺利～
