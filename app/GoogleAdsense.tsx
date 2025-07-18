@@ -14,7 +14,7 @@ export default function GoogleAdsense() {
     <Script
       id="google-adsense"
       async
-      strategy="afterInteractive"
+      strategy="lazyOnload"
       src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseId}`}
       crossOrigin="anonymous"
     />

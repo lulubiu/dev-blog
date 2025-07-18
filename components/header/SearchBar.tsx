@@ -7,7 +7,7 @@ import { BlogPost } from "@/types/blog";
 import { SearchResult } from "@/types/search";
 import { Transition } from "@headlessui/react";
 import Link from "next/link";
-import { useCallback, useState, useEffect } from "react";
+import { useCallback, useState, useEffect, useMemo } from "react";
 import { HighlightMatches } from "./HighlightMatches";
 import { debounce } from 'lodash';
 
@@ -18,7 +18,11 @@ const SearchBar = ({ posts }: { posts: BlogPost[] }) => {
   const [error, setError] = useState(false);
   const [results, setResults] = useState<SearchResult[]>([]);
 
-  createIndex({ documents: posts });
+  // 使用 useMemo 缓存索引创建
+  const searchIndex = useMemo(() => {
+    createIndex({ documents: posts });
+    return true;
+  }, [posts]);
 
   // 防抖搜索函数
   const debouncedSearch = useCallback(
@@ -40,8 +44,8 @@ const SearchBar = ({ posts }: { posts: BlogPost[] }) => {
       } finally {
         setLoading(false);
       }
-    }, 300),
-    []
+    }, 400), // 增加防抖时间到400ms
+    [searchIndex]
   );
 
   // 搜索输入变化处理
@@ -61,7 +65,7 @@ const SearchBar = ({ posts }: { posts: BlogPost[] }) => {
   // 监听查询变化并执行防抖搜索
   useEffect(() => {
     debouncedSearch(query);
-  }, [query, debouncedSearch]); 
+  }, [query, debouncedSearch]);
 
   return (
     <>
@@ -99,12 +103,16 @@ const SearchBar = ({ posts }: { posts: BlogPost[] }) => {
             transition: "max-height .2s ease", // don't work with tailwindcss
           }}
         >
-          {error ? (
+          {loading ? (
             <span className="block select-none p-4 md:p-8 text-center text-xs md:text-sm text-gray-400">
-              {error}
+              搜索中...
+            </span>
+          ) : error ? (
+            <span className="block select-none p-4 md:p-8 text-center text-xs md:text-sm text-gray-400">
+              搜索出错
             </span>
           ) : results && results.length > 0 ? (
-            results.map((result, index) => (
+            results.slice(0, 10).map((result, index) => ( // 限制结果数量
               <Link
                 key={`${result.id}_${index}`}
                 // get the right url
@@ -126,7 +134,7 @@ const SearchBar = ({ posts }: { posts: BlogPost[] }) => {
                   <div className="excerpt mt-1 text-xs md:text-sm leading-[1.25rem] md:leading-[1.35rem] text-gray-600 dark:text-gray-400 contrast-more:dark:text-gray-50">
                     <HighlightMatches
                       match={query}
-                      value={result.doc.content}
+                      value={result.doc.content.slice(0, 200)} // 限制内容长度
                     />
                   </div>
                 </li>
