@@ -15,6 +15,7 @@ const nextConfig = {
   experimental: {
     optimizeCss: true, // 启用CSS优化
     webVitalsAttribution: ['CLS', 'LCP'], // Web Vitals监控
+    optimizePackageImports: ['react-icons', 'lucide-react', 'date-fns'], // 优化包导入
   },
   
   // 图片优化
