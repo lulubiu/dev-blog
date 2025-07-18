@@ -84,9 +84,20 @@ const MDXComponents: MDXComponentsProps = {
       {...props}
     />
   ),
-  img: (props) => (
-    <img width="100%" className="rounded border-2 md:border-4 border-main" {...props} />
-  ),
+  img: (props) => {
+    const { src, alt, ...otherProps } = props;
+    return (
+      <Image
+        src={src}
+        alt={alt || ''}
+        width={800}
+        height={450}
+        className="rounded border-2 md:border-4 border-main w-full h-auto"
+        loading="lazy"
+        {...otherProps}
+      />
+    );
+  },
   strong: (props) => <strong className="font-bold" {...props} />,
   table: (props) => (
     <div className="my-4 md:my-6 w-full overflow-x-auto">

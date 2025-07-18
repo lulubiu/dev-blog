@@ -20,68 +20,47 @@ const SearchBar = ({ posts }: { posts: BlogPost[] }) => {
 
   createIndex({ documents: posts });
 
-  /**
-   * 处理搜索输入的变化
-   * Handle the change of search input
-   * @param value 搜索输入的值 The value of the search input
-   */
-  const handleChange = useCallback(
-    async (value: string) => {
-      setQuery(value);
-      if (loading) {
-        return;
-      }
-      setLoading(true);
-      try {
-        handleSearch(value);
-      } catch (e) {
-        setError(true);
-      }
-      setLoading(false);
-    },
-    [loading]
-  );
-
-  /**
-   * 处理搜索输入框的变化事件
-   * Handle the change event of the search input
-   * @param e 变化事件 The change event
-   */
-  const onChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    setQuery(value); // 修改这一行
-    setShow(Boolean(value));
-  };
-
-  /**
-   * 执行搜索
-   * Perform the search
-   * @param value 搜索关键词 The search keyword
-   */
-  const handleSearch = async (value: string) => {
-    const searchResults: SearchResult[] = await doSearch(value);
-    setResults(searchResults);
-  };
-
-  /**
-   * 完成搜索
-   * Finish the search
-   */
-  const finishSearch = useCallback(() => {
-    handleChange("");
-    setShow(false);
-  }, [handleChange]);
-
+  // 防抖搜索函数
   const debouncedSearch = useCallback(
     debounce(async (value: string) => {
-      const results = await doSearch(value);
-      setResults(results); 
+      if (!value.trim()) {
+        setResults([]);
+        setLoading(false);
+        return;
+      }
+      
+      setLoading(true);
+      setError(false);
+      try {
+        const searchResults = await doSearch(value);
+        setResults(searchResults);
+      } catch (e) {
+        setError(true);
+        setResults([]);
+      } finally {
+        setLoading(false);
+      }
     }, 300),
     []
   );
 
+  // 搜索输入变化处理
+  const onChangeSearch = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setQuery(value);
+    setShow(Boolean(value));
+  }, []);
+
+  // 完成搜索
+  const finishSearch = useCallback(() => {
+    setQuery("");
+    setShow(false);
+    setResults([]);
+  }, []);
+
+  // 监听查询变化并执行防抖搜索
   useEffect(() => {
-    debouncedSearch(query); 
+    debouncedSearch(query);
   }, [query, debouncedSearch]); 
 
   return (

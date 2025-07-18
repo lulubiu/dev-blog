@@ -1,7 +1,14 @@
-import BlogList from "@/components/BlogList";
-import TimeLine from "@/components/TimeLine";
 import { getBlogPosts } from "@/lib/blog";
 import { BlogPost, PostsByMonth } from "@/types/blog";
+import dynamic from 'next/dynamic';
+
+const BlogList = dynamic(() => import('@/components/BlogList'), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-32 w-full rounded"></div>
+});
+
+const TimeLine = dynamic(() => import('@/components/TimeLine'), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-20 w-48 rounded"></div>
+});
 
 export default async function Home() {
   const {

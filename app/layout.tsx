@@ -41,6 +41,23 @@ export default async function RootLayout({
   return (
     <ViewTransitions>
       <html lang="zh" className={inter.className} suppressHydrationWarning>
+        <head>
+          {/* DNS预解析优化字体加载 */}
+          <link rel="dns-prefetch" href="//cdn.bootcdn.net" />
+          <link rel="preconnect" href="https://cdn.bootcdn.net" crossOrigin="anonymous" />
+          {/* 字体加载优化 */}
+          <link 
+            rel="preload" 
+            href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-webfont/1.6.0/style.min.css"
+            as="style"
+          />
+          <link 
+            rel="stylesheet" 
+            href="https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-webfont/1.6.0/style.min.css"
+          />
+          {/* 预加载关键图片 */}
+          <link rel="preload" href="/logo.svg" as="image" />
+        </head>
         <body className="min-h-screen bg-background antialiased">
           <ThemeProvider
             attribute="class"

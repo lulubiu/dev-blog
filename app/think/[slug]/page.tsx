@@ -1,6 +1,13 @@
-import ThinkList from "@/components/ThinkList";
 import MDXComponents from "@/components/mdx/MDXComponents";
-import TOC from "@/components/TOC";
+import dynamic from 'next/dynamic';
+
+const ThinkList = dynamic(() => import('@/components/ThinkList'), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-4 w-20 rounded"></div>
+});
+
+const TOC = dynamic(() => import('@/components/TOC'), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-20 w-full rounded"></div>
+});
 import { Separator } from "@/components/ui/separator";
 import { siteConfig } from "@/config/site";
 import { getThinkPosts } from "@/lib/think";

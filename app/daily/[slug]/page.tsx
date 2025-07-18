@@ -1,5 +1,9 @@
-import DailyList from "@/components/DailyList";
 import MDXComponents from "@/components/mdx/MDXComponents";
+import dynamic from 'next/dynamic';
+
+const DailyList = dynamic(() => import('@/components/DailyList'), {
+  loading: () => <div className="animate-pulse bg-gray-200 h-4 w-20 rounded"></div>
+});
 import { Separator } from "@/components/ui/separator";
 import { siteConfig } from "@/config/site";
 import { getDailyPosts } from "@/lib/daily";

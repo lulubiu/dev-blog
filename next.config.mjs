@@ -8,6 +8,19 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
   },
+  // 编译优化
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  // 图片优化
+  images: {
+    formats: ['image/webp', 'image/avif'],
+    minimumCacheTTL: 31536000, // 1年
+  },
+  // 压缩配置
+  compress: true,
+  // 字体优化
+  optimizeFonts: true,
   // Optionally, add any other Next.js config below
   output: "export"
 };
