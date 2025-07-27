@@ -10,7 +10,6 @@ import { Metadata, Viewport } from "next";
 import { ViewTransitions } from "next-view-transitions";
 import { Inter } from 'next/font/google';
 import GoogleAdsense from "./GoogleAdsense";
-import Script from 'next/script';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -65,22 +64,6 @@ export default async function RootLayout({
           <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
         </head>
         <body className="min-h-screen bg-background antialiased">
-          {/* Web Vitals 监控 */}
-          <Script
-            id="web-vitals"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-                import('/next/web-vitals').then((mod) => {
-                  mod.getCLS(console.log);
-                  mod.getFID(console.log);
-                  mod.getFCP(console.log);
-                  mod.getLCP(console.log);
-                  mod.getTTFB(console.log);
-                });
-              `
-            }}
-          />
           
           <ThemeProvider
             attribute="class"
