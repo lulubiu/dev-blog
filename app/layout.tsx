@@ -64,6 +64,7 @@ export default async function RootLayout({
           <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
         </head>
         <body className="min-h-screen bg-background antialiased">
+          <GoogleAdsense />
           
           <ThemeProvider
             attribute="class"
@@ -71,7 +72,6 @@ export default async function RootLayout({
             defaultTheme={siteConfig.defaultNextTheme}
             forcedTheme={siteConfig.defaultNextTheme}
           >
-            <GoogleAdsense />
             <Header posts={posts} />
 
             <main className="flex flex-col items-center py-3 md:py-6 w-full">

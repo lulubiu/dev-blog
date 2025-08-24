@@ -1,35 +1,24 @@
-'use client';
+"use client";
 
-import Script from 'next/script';
-import { memo } from 'react';
+import Script from "next/script";
 
-const GoogleAdsense = memo(() => {
-  const isProduction = process.env.NODE_ENV === 'production';
-  const adsenseId = process.env.NEXT_PUBLIC_ADSENSE_ID;
-
-  if (!isProduction || !adsenseId) {
-    return null;
-  }
-
+const GoogleAdsense = () => {
   return (
-    <Script
-      id="google-adsense"
-      async
-      strategy="afterInteractive"
-      src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseId}`}
-      crossOrigin="anonymous"
-      onLoad={() => {
-        if (typeof window !== 'undefined') {
-          (window as any).adsbygoogle = (window as any).adsbygoogle || [];
-        }
-      }}
-      onError={(e) => {
-        console.warn('AdSense script failed to load:', e);
-      }}
-    />
+    <>
+      {process.env.NEXT_PUBLIC_ADSENSE_ID ? (
+        <>
+          <Script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_ID}`}
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
+        </>
+      ) : (
+        <></>
+      )}
+    </>
   );
-});
+};
 
-GoogleAdsense.displayName = 'GoogleAdsense';
-
-export default GoogleAdsense; 
+export default GoogleAdsense;
