@@ -15,11 +15,10 @@ const GoogleAdsense = memo(() => {
     <Script
       id="google-adsense"
       async
-      strategy="worker" // 使用 worker 策略减少主线程阻塞
+      strategy="afterInteractive"
       src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseId}`}
       crossOrigin="anonymous"
       onLoad={() => {
-        // 延迟初始化广告
         if (typeof window !== 'undefined') {
           (window as any).adsbygoogle = (window as any).adsbygoogle || [];
         }
