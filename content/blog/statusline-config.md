@@ -50,10 +50,11 @@ fi
 # 获取 ccusage 费用信息
 ccusage_daily_output=$(npx -y ccusage daily -j 2>/dev/null || echo "")
 
-# 从 ccusage 输出中提取费用信息
+# 从 ccusage 输出中提取今天的费用信息
 daily_cost=""
 if [ -n "$ccusage_daily_output" ]; then
-    daily_cost_raw=$(echo "$ccusage_daily_output" | jq -r '.totals.totalCost // 0' 2>/dev/null)
+    today=$(date +%Y-%m-%d)
+    daily_cost_raw=$(echo "$ccusage_daily_output" | jq -r --arg today "$today" '.daily[] | select(.date == $today) | .totalCost // 0' 2>/dev/null)
     if [ "$daily_cost_raw" != "0" ] && [ "$daily_cost_raw" != "null" ] && [ -n "$daily_cost_raw" ]; then
         daily_cost=$(printf "\$%.2f" "$daily_cost_raw")
     fi
