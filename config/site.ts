@@ -17,7 +17,7 @@ const baseSiteConfig = {
     apple: "/logo.png",
   },
   headerLinks: [
-    { name: 'github', href: "https://github.com/zll-0405/dev-blog", icon: BsGithub },
+    { name: 'github', href: "https://github.com/lulubiu/dev-blog", icon: BsGithub },
     { name: 'wechat', href: "/wechat", icon: BsWechat },
   ]
 }
