@@ -1,0 +1,23 @@
+---
+title: 更改 github 用户名
+date: 2025-09-13
+description: github 用户名可以更改的
+---
+
+我一直想要更改一下自己的 github 用户名，以前是 zll-0405，现在改成了 lulubiu
+
+zll 大概都能猜出来，是我名字的缩写，0405 是我妈妈的生日，但这样会很容易给别人造成误解，让人以为是我的生日 🤦‍♀️   
+因为这个原因，就一直想要更改一下用户名，也一直以为是不支持的，今天突然不信邪，想看看，结果发现！竟然是支持的
+
+修改具体方式是：
+进入到自己的个人界面，网址应该是 `https://github.com/xxx` 这里面的 xxx 是举例，把它替换成你自己的用户名就可以了，这样你就来到了个人主页   
+右上角自己的头像，点击会有下拉框，找到 `Settings` ，点击它，进入到新的界面，点击 Account 进入到该界面： `https://github.com/settings/admin` ，该界面最上面就是 Change username 选项了
+
+在修改用户名之前，请先阅读该信息 [https://docs.github.com/en/account-and-profile/concepts/username-changes](https://docs.github.com/en/account-and-profile/concepts/username-changes)
+
+其实想想，也大概能够知道，用户名相当于是唯一凭证，如果你更改了之后，其他地方在使用到以前的链接时，就会报错，所以要不要更改，就是看你在其他地方使用的链接多不多，更改起来是否麻烦了
+
+我自己更改完之后发现，在 cloudflare 上部署是没问题的，但我不确定是因为 github 那边做了重定向，还是因为啥，所以为了以防万一，我选择重新部署下我的网站   
+更改完用户名之后，本地以前的项目提交什么的，也不受限，同样，为了以防万一，最好密钥重新生成一下，项目重新下载一下
+
+我自己的经验非常主观～
