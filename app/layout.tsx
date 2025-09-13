@@ -7,7 +7,6 @@ import "@/styles/globals.css";
 import "@/styles/loading.css";
 import { BlogPost, PostsByMonth } from "@/types/blog";
 import { Metadata, Viewport } from "next";
-import { ViewTransitions } from "next-view-transitions";
 import { Inter } from 'next/font/google';
 import GoogleAdsense from "./GoogleAdsense";
 
@@ -40,8 +39,7 @@ export default async function RootLayout({
     await getBlogPosts();
 
   return (
-    <ViewTransitions>
-      <html lang="zh" className={inter.className} suppressHydrationWarning>
+    <html lang="zh" className={inter.className} suppressHydrationWarning>
         <head>
           {/* DNS预解析优化字体加载 */}
           <link rel="dns-prefetch" href="//cdn.bootcdn.net" />
@@ -82,7 +80,6 @@ export default async function RootLayout({
 
           </ThemeProvider>
         </body>
-      </html>
-    </ViewTransitions>
+    </html>
   );
 }
