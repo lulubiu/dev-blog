@@ -85,4 +85,19 @@ Host github.com
   ProxyCommand nc -v -x 127.0.0.1:7890 %h %p
 ```
 
+---
+
+update： 2025 年 9 月 24 日 19:12:48
+
+重装了系统之后，我的文件最终内容是这个了：
+
+```
+Host github.com
+    Hostname ssh.github.com
+    Port 443
+    User git
+```
+
+详细参考： [在 HTTPS 端口使用 SSH](https://docs.github.com/zh/authentication/troubleshooting-ssh/using-ssh-over-the-https-port)
+
 以上，感谢您的阅读
