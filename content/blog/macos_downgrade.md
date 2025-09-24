@@ -25,7 +25,10 @@ macOS 电脑本身常用设置（系统版本 Sequoia）：
 系统设置-通用-软件更新-把自动更新相关的全部都关掉   
 系统设置-控制中心-电池-显示百分比   
 系统设置-控制中心-仅菜单栏-时钟-时钟选项-在时间中显示秒钟   
-系统设置-桌面与程序坞-把该关掉的全都关掉
+系统设置-桌面与程序坞-把该关掉的全都关掉   
+访达-设置-将各种无关的都去掉   
+访达-显示-显示路径栏（也可以在访达界面中，使用 `Option + Command + P` 快捷键）   
+<img src="/assets/about-macos-upgrade/download.webp" loading="lazy" alt="访达界面" />
 
 常用软件（必须）：   
 raycast - 效率软件，下载链接 [https://www.raycast.com/](https://www.raycast.com/)   
