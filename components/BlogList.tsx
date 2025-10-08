@@ -17,15 +17,6 @@ export default async function BlogList({
           key={post.metadata.slug}
           className={`flex ${isSide ? "flex-col gap-1" : "flex-col sm:flex-row gap-2 md:gap-4"} items-start w-full`}
         >
-          {isSide ? (
-            <span className="text-[#8585a8] text-xs mb-1">
-              {dayjs(post.metadata.date).format("YYYY-MM-DD")}
-            </span>
-          ) : (
-            <span className="text-[#8585a8] text-sm md:text-base min-w-20 md:min-w-28 shrink-0">
-              {dayjs(post.metadata.date).format("YYYY-MM-DD")}
-            </span>
-          )}
           <div className={`w-full ${!isSide && "sm:max-w-[75%] md:max-w-[80%]"}`}>
             <Link
               href={`/blog/${post.metadata.slug}`}
