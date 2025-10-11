@@ -10,24 +10,25 @@ export default async function BlogList({
   posts: BlogPost[];
 }) {
   return (
-    <ul className="flex flex-col gap-3 md:gap-4 w-full">
+    <ul className={`flex flex-col ${isSide ? "gap-4" : "gap-3 md:gap-4"} w-full`}>
       {posts.map((post) => (
         <li
           id={post.id}
           key={post.metadata.slug}
-          className={`flex ${isSide ? "flex-col gap-1" : "flex-col sm:flex-row gap-2 md:gap-4"} items-start w-full`}
+          className={`flex ${isSide ? "flex-col sm:flex-row gap-4" : "flex-col sm:flex-row gap-2 md:gap-4"} items-start w-full`}
         >
-          <div className={`w-full ${!isSide && "sm:max-w-[75%] md:max-w-[80%]"}`}>
-            <Link
-              href={`/blog/${post.metadata.slug}`}
-              title={post.metadata.title}
-              className={`link-default ${isSide ? "text-xs leading-tight" : "text-sm md:text-base"} block truncate transition-colors duration-300 hover:opacity-80`}
-            >
-              {isSide && post.metadata.title.length > 25 
-                ? `${post.metadata.title.substring(0, 25)}...` 
-                : post.metadata.title}
-            </Link>
-          </div>
+          {!isSide && (
+            <span className="text-[#8585a8] min-w-28">
+              {dayjs(post.metadata.date).format("YYYY-MM-DD")}
+            </span>
+          )}
+          <Link
+            href={`/blog/${post.metadata.slug}`}
+            title={post.metadata.title}
+            className={`link-default ${isSide ? "truncate" : "text-sm md:text-base truncate"} transition-colors duration-500 ease-in-out`}
+          >
+            {post.metadata.title}
+          </Link>
         </li>
       ))}
     </ul>
