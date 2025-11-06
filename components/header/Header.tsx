@@ -9,7 +9,7 @@ import Link from "next/link";
 const Header = ({ posts }: { posts: BlogPost[] }) => {
   return (
     <header className="flex z-40 w-full h-auto py-2 px-2 items-center justify-center data-[menu-open=true]:border-none sticky top-0 inset-x-0 backdrop-blur-lg data-[menu-open=true]:backdrop-blur-xl backdrop-saturate-150 bg-background/70">
-      <nav className="z-40 flex px-0 md:px-6 gap-2 md:gap-4 w-full flex-row relative flex-nowrap items-center justify-between h-[var(--navbar-height)] max-w-[1024px]">
+      <nav className="z-40 flex px-0 md:px-6 gap-2 md:gap-4 w-full flex-row relative flex-nowrap items-center h-[var(--navbar-height)] max-w-[1024px]">
        <div className="flex items-center md:gap-x-12">
           <Link href="/" className="flex items-center space-x-1 font-bold">
             <Image
@@ -28,11 +28,11 @@ const Header = ({ posts }: { posts: BlogPost[] }) => {
           <HeaderMenu />
         </div>
 
-        <div className="flex md:hidden items-center ml-auto mr-2">
+        <div className="flex md:hidden items-center flex-1 justify-center min-w-0 mx-2">
           <HeaderMenu />
         </div>
 
-        <div className="flex items-center gap-1 md:gap-4">
+        <div className="flex items-center gap-1 md:gap-4 shrink-0">
           <SearchBar posts={posts} />
           <HeaderLinks />
         </div>
