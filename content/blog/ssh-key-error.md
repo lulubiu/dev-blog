@@ -100,4 +100,24 @@ Host github.com
 
 详细参考： [在 HTTPS 端口使用 SSH](https://docs.github.com/zh/authentication/troubleshooting-ssh/using-ssh-over-the-https-port)
 
+---
+
+update：2025 年 11 月 18 日 08:43:17
+
+前一段时间又是各种报错，各种方案都尝试了，时好时坏，主要还是 🪜 规则的问题   
+那天突然想起来，既然我的规则有问题，那我直接更新一下规则不就可以了，自从更新之后，到现在，一直没出现什么问题，更新下解决方案   
+本地 config 文件内容：
+```
+Host github.com
+    Hostname ssh.github.com
+    Port 443
+    User git
+```
+添加的规则是：
+```
+规则类型： domain
+规则内容： ssh.github.com
+代理策略： direct
+```
+
 以上，感谢您的阅读
