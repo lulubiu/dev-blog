@@ -7,14 +7,7 @@ import "@/styles/globals.css";
 import "@/styles/loading.css";
 import { BlogPost, PostsByMonth } from "@/types/blog";
 import { Metadata, Viewport } from "next";
-import { Inter } from 'next/font/google';
 import GoogleAdsense from "./GoogleAdsense";
-
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  preload: true,
-})
 
 export const metadata: Metadata = {
   ...siteConfig,
@@ -39,7 +32,7 @@ export default async function RootLayout({
     await getBlogPosts();
 
   return (
-    <html lang="zh" className={inter.className} suppressHydrationWarning>
+    <html lang="zh" suppressHydrationWarning>
         <head>
           {/* DNS预解析优化字体加载 */}
           <link rel="dns-prefetch" href="//cdn.bootcdn.net" />
