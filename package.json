@@ -45,7 +45,7 @@
     "@types/react": "^19.0.6",
     "@types/react-dom": "^19.0.6",
     "autoprefixer": "^10.4.20",
-    "critters": "^0.0.25",
+    "beasties": "^0.3.5",
     "eslint": "^9.18.0",
     "eslint-config-next": "^16.0.1",
     "next-sitemap": "^4.2.3",
