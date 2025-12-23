@@ -1,5 +1,6 @@
 import { SiteConfig } from "@/types/siteConfig";
-import { BsWechat,BsGithub } from "react-icons/bs";
+import { BsGithub } from "react-icons/bs";
+import { RiWechatPayFill } from "react-icons/ri";
 
 const baseSiteConfig = {
   name: "Developer.lulu",
@@ -18,7 +19,7 @@ const baseSiteConfig = {
   },
   headerLinks: [
     { name: 'github', href: "https://github.com/lulubiu/dev-blog", icon: BsGithub },
-    { name: 'wechat', href: "/wechat", icon: BsWechat },
+    { name: 'wechat', href: "/wechatpay", icon: RiWechatPayFill },
   ]
 }
 
