@@ -1,7 +1,7 @@
 export default function Coffee() {
   return (
     <div className="mx-automax-h-screen flex flex-col items-center">
-        <img src="wechatpay.jpg" alt="赞赏码" width="25%" height="25%"/>
+        <img src="wechatpay.png" alt="赞赏码" width="25%" height="25%"/>
         <div className="text-center mt-4 flex flex-col sm:flex-row">
             <ul className="mt-4 space-y-2">
                 <li>
