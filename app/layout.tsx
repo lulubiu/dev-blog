@@ -7,7 +7,6 @@ import "@/styles/globals.css";
 import "@/styles/loading.css";
 import { BlogPost, PostsByMonth } from "@/types/blog";
 import { Metadata, Viewport } from "next";
-import GoogleAdsense from "./GoogleAdsense";
 
 export const metadata: Metadata = {
   ...siteConfig,
@@ -55,7 +54,6 @@ export default async function RootLayout({
           <link rel="dns-prefetch" href="//pagead2.googlesyndication.com" />
         </head>
         <body className="min-h-screen bg-background antialiased">
-          <GoogleAdsense />
           
           <ThemeProvider
             attribute="class"
